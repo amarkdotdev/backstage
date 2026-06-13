@@ -493,6 +493,25 @@ export type BoxUtilityProps = {
   maxHeight?: Responsive<string>;
 };
 
+// @public
+export interface BreadcrumbEntry {
+  // (undocumented)
+  href?: string;
+  // (undocumented)
+  label: string;
+}
+
+// @public
+export function BreadcrumbRegistration(props: {
+  entry: BreadcrumbEntry;
+  children: ReactNode;
+}): JSX_2.Element;
+
+// @public
+export function BreadcrumbsRegistryProvider(props: {
+  children: ReactNode;
+}): JSX_2.Element;
+
 // @public (undocumented)
 export type Breakpoint = 'initial' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -3840,6 +3859,7 @@ export const SkeletonDefinition: {
   readonly classNames: {
     readonly root: 'bui-Skeleton';
   };
+  readonly bg: 'consumer';
   readonly propDefs: {
     readonly width: {
       readonly default: 80;
@@ -4572,6 +4592,9 @@ export function useBgConsumer(): BgContextValue;
 
 // @public
 export function useBgProvider(bg?: Responsive<ProviderBg>): BgContextValue;
+
+// @public
+export function useBreadcrumbs(): BreadcrumbEntry[];
 
 // @public (undocumented)
 export const useBreakpoint: () => {
